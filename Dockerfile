@@ -6,9 +6,10 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Run stage
-FROM eclipse-temurin:24-jdk-jammy
+FROM eclipse-temurin:24-jdk
 WORKDIR /app
-COPY --from=builder /app/target/*.jar app.jar
+COPY app.jar .
 EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]
+
 
