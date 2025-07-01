@@ -8,7 +8,7 @@ RUN mvn clean package -DskipTests
 # Run stage
 FROM eclipse-temurin:24-jdk
 WORKDIR /app
-COPY app.jar .
+COPY target/*.jar app.jar
 EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]
 
