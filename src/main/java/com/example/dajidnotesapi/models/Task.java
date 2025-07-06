@@ -36,13 +36,11 @@ public class Task {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
         if (status == null) {
-            status = Status.InProcessing;
+            status = Status.InProgress;
         }
     }
 
     public enum Status {
-        InProcessing,
-        Cancel,
-        Done
+        Pending, InProgress, Completed
     }
 }
