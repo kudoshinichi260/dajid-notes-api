@@ -36,7 +36,7 @@ public class Task {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
         if (status == null) {
-            status = Status.InProgress;
+            status = Status.Pending;
         }
     }
 
